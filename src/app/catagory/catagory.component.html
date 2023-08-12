@@ -1,0 +1,25 @@
+<div class="container">
+    <button routerLink="/vehicle" class="btn">vehicle List</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Color</th>
+                <th>Fuel Type</th>
+                <th>Model</th>
+                <th>Catagory</th>
+                <th>Detail-Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let temp of vehicleList.list,let i = index">
+                <td *ngIf="temp.category == vehicleList.list[index].category">{{temp.name}}</td>
+                <td *ngIf="temp.category == vehicleList.list[index].category">{{temp.color}}</td>
+                <td *ngIf="temp.category == vehicleList.list[index].category">{{temp.fuelType}}</td>
+                <td *ngIf="temp.category == vehicleList.list[index].category">{{temp.model}}</td>
+                <td *ngIf="temp.category == vehicleList.list[index].category">{{temp.category}}</td>
+                <td (click) = "getDetail(i)"routerLink="/vehicle/detail" *ngIf="temp.category == vehicleList.list[index].category"><button>Detail</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

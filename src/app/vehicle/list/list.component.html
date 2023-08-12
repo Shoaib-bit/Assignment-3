@@ -1,0 +1,26 @@
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Color</th>
+                <th>Fuel Type</th>
+                <th>Model</th>
+                <th>Catagory</th>
+                <th>Category-Action</th>
+                <th>Detail-Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let temp of vehicleList.list,let i = index">
+                <td>{{temp.name}}</td>
+                <td>{{temp.color}}</td>
+                <td>{{temp.fuelType}}</td>
+                <td>{{temp.model}}</td>
+                <td>{{temp.category}}</td>
+                <td (click)="getDetail(i)"routerLink="/catagory"><Button>Category</Button></td>
+                <td (click)="getDetail(i)" routerLink="detail"><button>Detail</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
